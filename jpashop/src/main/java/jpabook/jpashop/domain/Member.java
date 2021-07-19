@@ -26,5 +26,8 @@ public class Member {
 	private Address address;
 	
 	@OneToMany(mappedBy = "member")
-	private List<Order> orders = new ArrayList<>();
+	private List<Order> orders = new ArrayList<>(); // NullpointException 나올일 없음. 컬렉션은 필드에서 초기화하는게 안전.
+	// 하이버네이트는 영속화때,컬렉션을 감싸서, 하이버네이트가제공하는 내장 컬렉션으로 변경함. 
+	
+	
 }
